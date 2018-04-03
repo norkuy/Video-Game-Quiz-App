@@ -270,7 +270,7 @@
                 state.setAchievement();
                 return `<section role="region" class="play-again-screen">
                           <section role="region">
-                            <h2 class="text-center">${state.correct} out of ${state.total}</h2>
+                            <h1 class="text-center">${state.correct} out of ${state.total}</h1>
                             <h2 class="text-center">${state.rank() !== 'None' ? 'Achievement Unlocked!' : ''}</h2>
                             <h2 class="text-center">${state.rank() !== 'None' ? state.rank() : ''}</h2>
                             <h2 class="text-center">Click below to play a bonus round!</h2>
@@ -284,9 +284,9 @@
                 let currentQuestion = state.quizQuestions[Math.ceil((state.idx / 2) - 1)];
                 return `<section role="region" class="question-screen">
                         <section role="region" class="form-box">
-                        <header role="banner">
-                            <h2 class="text-center">${currentQuestion.question}</h2>
-                        </header>
+                        <section role="region">
+                            <h1 class="text-center">${currentQuestion.question}</h1>
+                        </section>
                         <form>
                         <fieldset name="question-${currentQuestion.questionNumber}-choices">
                           <label for="answer-1">
@@ -323,9 +323,9 @@
                         </section>
                         <section role="region" class="more-info">
                             <div class="stats">
-                                <h3 class="text-center error"></h3>
-                                <h3 class="text-center">Question: ${currentQuestion.questionNumber} out of ${state.total}</h3>
-                                <h3 class="text-center">Correct: ${state.correct}, Incorrect: ${state.incorrect}</h3>
+                                <h2 class="text-center error"></h2>
+                                <h2 class="text-center">Question: ${currentQuestion.questionNumber} out of ${state.total}</h2>
+                                <h2 class="text-center">Correct: ${state.correct}, Incorrect: ${state.incorrect}</h2>
                             </div>
                         </section>
                     </section>`;
@@ -334,9 +334,9 @@
                 let currentQuestion = state.quizQuestions[Math.ceil((state.idx / 2) - 1)];
                 return `<section role="region" class="answer-screen">
                           <section role="region" class="answer-txt">
-                            <h3 class="text-center">${ isAnswerCorrect ? 'You\'re correct! (◕‿-)' : 'Sorry (╥_╥) incorrect!' }</h3>
-                            <h3 class="text-center">${ isAnswerCorrect ? '' : 'You guessed ' + currentQuestion.userChoice }</h3>
-                            <h3 class="text-center">${ isAnswerCorrect ? '' : 'The correct answer is ' + currentQuestion.correct }</h3>
+                            <h1 class="text-center">${ isAnswerCorrect ? 'You\'re correct! (◕‿-)' : 'Sorry (╥_╥) incorrect!' }</h1>
+                            <h2 class="text-center">${ isAnswerCorrect ? '' : 'You guessed ' + currentQuestion.userChoice }</h2>
+                            <h2 class="text-center">${ isAnswerCorrect ? '' : 'The correct answer is ' + currentQuestion.correct }</h2>
                            <form>
                             <button type="submit" class="continue" value="CONTINUE">CONTINUE</button>
                           </form>
